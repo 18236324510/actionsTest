@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Fetch all history
+        run: git fetch --prune --unshallow
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
