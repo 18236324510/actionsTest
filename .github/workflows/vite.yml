@@ -20,17 +20,15 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: npm ci
 
-      - name: Build Vue 3 TypeScript Vite project
+      - name: 构建
         run: npm run build
 
-      - name: Build Vue 3 TypeScript Vite project
-        run: npm -v
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
-          publish_dir: ./dist 
+          publish_dir: . 
