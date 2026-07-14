@@ -1,0 +1,213 @@
+:root {
+  color-scheme: light;
+  --bg: #f3efe6;
+  --bg-accent: #e7dfd0;
+  --ink: #1c1914;
+  --muted: #5c5348;
+  --panel: #fffaf2;
+  --line: #cbbfaa;
+  --brand: #6b2d1a;
+  --brand-soft: #8f4a32;
+  --focus: #2f5d50;
+  --shadow: 0 10px 30px rgba(40, 28, 16, 0.08);
+  font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', Georgia,
+    serif;
+  line-height: 1.55;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, #efe4d2 0, transparent 40%),
+    linear-gradient(160deg, #f7f1e6, #ebe2d3 55%, #e4d8c5);
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--brand);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--brand-soft);
+}
+
+.app-shell {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0 1.25rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.page {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero,
+.section-head {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--brand);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: 'IBM Plex Sans', 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.lede {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.playstyle-grid,
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.playstyle-card,
+.companion-card,
+.panel,
+.advice-block {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.playstyle-card,
+.companion-card {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.playstyle-card:hover,
+.companion-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-soft);
+}
+
+.panel,
+.advice-block {
+  padding: 1rem 1.1rem;
+}
+
+.advice-block {
+  margin-top: 0.85rem;
+}
+
+.advice-block h3 {
+  margin-bottom: 0.5rem;
+}
+
+.advice-block h4 {
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.muted,
+.meta {
+  color: var(--muted);
+  margin: 0;
+}
+
+.meta {
+  font-size: 0.92rem;
+  font-family: 'IBM Plex Sans', 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+.crumbs {
+  font-size: 0.92rem;
+  color: var(--muted);
+  font-family: 'IBM Plex Sans', 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--line);
+  background: var(--bg-accent);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: 'IBM Plex Sans', 'PingFang SC', 'Noto Sans SC', sans-serif;
+}
+
+.gear-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.build-block {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer-link {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .app-shell {
+    padding: 0.85rem 1rem 2.5rem;
+  }
+}
